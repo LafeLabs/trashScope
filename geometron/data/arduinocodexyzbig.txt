@@ -1,9 +1,7 @@
-char coin[] = "E";
 
-int delayus = 2000;//delayMicroseconds(delayus); for each step, 2 ms for 1 step is about 2 ms for 20 microns or 10 microns per ms
+int delayus = 450;//delayMicroseconds(delayus);
 
-int unit = 212;//53 steps = 1 mm, 1 step = 18.9 microns, unit of 106 is 2 mm, 212 is 4 mm
-
+int unit = 120;
 int side = unit;
 
 //these are the pin numbers of the buttons on the controller.  Connect to ground to activate.
@@ -264,28 +262,28 @@ void geometronAction(char action){
     side *= 2;
   }
   if(action == 'A'){
-    geometronSequence("efa");//4 mm up and 4 mm down, then move 4 mm right
+    geometronSequence("gdheeff");
   }
   if(action == 'B'){
-    geometronSequence("efb");//4 mm up 4 mm down, then 4 mm left 
+    geometronSequence("gcheeff");
   }
   if(action == 'C'){
-    geometronSequence("efc");//4 mm up, 4 mm down, then 4 mm away
+    geometronSequence("gbheeff");
   }
   if(action == 'D'){
-    geometronSequence("efd");//4 mm up, 4 mm down, 4 mm towards
+    geometronSequence("gaheeff");
   }
   if(action == 'E'){
-    geometronSequence("AAAAcBBBBcAAAAcBBBBcAAAAddddbbbb");//create array of 5x5 pixels with z stacks
+    geometronSequence("gdh");
   }
   if(action == 'F'){
-    geometronSequence("ggchh");
+    geometronSequence("gch");
   }
   if(action == 'G'){
-    geometronSequence("ggbhh");
+    geometronSequence("gbh");
   }
   if(action == 'H'){
-    geometronSequence("ggahh");
+    geometronSequence("gah");
   }
 }
 

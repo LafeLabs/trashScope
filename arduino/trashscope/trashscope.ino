@@ -1,4 +1,4 @@
-char coin[] = "E";
+char coin[] = "G";
 
 int delayus = 2000;//delayMicroseconds(delayus); for each step, 2 ms for 1 step is about 2 ms for 20 microns or 10 microns per ms
 
@@ -276,16 +276,16 @@ void geometronAction(char action){
     geometronSequence("efd");//4 mm up, 4 mm down, 4 mm towards
   }
   if(action == 'E'){
-    geometronSequence("AAAAcBBBBcAAAAcBBBBcAAAAddddbbbb");//create array of 5x5 pixels with z stacks
+    geometronSequence("AAAACBBBBCAAAACBBBBCAAAADdddbbbb");//create array of 5x5 pixels with z stacks
   }
   if(action == 'F'){
-    geometronSequence("ggchh");
+    geometronSequence("EEEEEEEEEE");//10 scans
   }
   if(action == 'G'){
-    geometronSequence("ggbhh");
+    geometronSequence("FFFFFFFFFF");//100 scans
   }
   if(action == 'H'){
-    geometronSequence("ggahh");
+    geometronSequence("GGGGGGGGGG");//1000 scans
   }
 }
 

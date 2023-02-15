@@ -90,9 +90,13 @@
     </div>
 </div>
 <div id = "controlbox">
-    <a href = "controls.html"><img style = "width:36px" src = "iconsymbols/edit.svg"/></a>
-    <table id = "controltable">
-    </table>
+    <h1>JSON trajectoy in box below:</h1>
+<textarea style = "width:90%;height:50em" id = "jsonout">
+</textarea>
+
+    <a style = "display:none" href = "controls.html"><img style = "width:36px" src = "iconsymbols/edit.svg"/></a>
+    <table style = "display:none" table id = "controltable">
+     </table>
 </div>
 <script>
 
@@ -113,21 +117,30 @@ foo.y = y;
 foo.z = z;
 trajectory.push(foo);
 
-function drawTrajectory(glyph){
-    actionSequence = glyph.split(",");
-    for(var index = 0;index < actionSequence.length;index++){
-        action = parseInt(actionSequence[index]);
-        if(action >= 0200 && action < 0300){
-            drawTrajectory(hypercube[action]);
-        }
-        if(action >= 0500 && action < 0600){
-            drawTrajectory(hypercube[action]);
-        }
 
-        if(action >= 0400 && action < 0500){
-            trajectoryAction(action);
+
+
+
+
+function drawTrajectory(glyph){
+    var actionSequence = glyph.split(",");
+    for(var index = 0;index < actionSequence.length;index++){
+        if(actionSequence[index].length> 0){
+            var action = parseInt(actionSequence[index],8);
+            console.log("0" + action.toString(8));
+            if(action >= 0500 && action < 0600){
+                console.log(mainGVM.hypercube[action]);
+                drawTrajectory(mainGVM.hypercube[action]);
+            }
+    
+            if(action >= 0400 && action < 0500){
+                trajectoryAction(action);
+            }
+            
         }
     }
+    document.getElementById("jsonout").value = JSON.stringify(trajectory,null,"    ");
+
 }
 
 function trajectoryAction(action){
@@ -169,6 +182,8 @@ function trajectoryAction(action){
     trajectory.push(state);
     
 }
+
+
 
 controls  = [
     "020,010,021,011,0201,0217,",
@@ -351,6 +366,8 @@ httpcHypercube.onreadystatechange = function(){
                 document.getElementById("maincanvas").height = currentjson.height;
                 document.getElementById("geometronbox").style.height = currentjson.height.toString() + "px";        
                 drawmain();
+                drawTrajectory("0504,");
+
                 
             }
         };
@@ -489,6 +506,12 @@ function savejson(){
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     httpc.send("data="+encodeURIComponent(JSON.stringify(currentjson,null,"    "))+"&filename=data/currentjson.txt");//send text to filesaver.php
 }
+
+
+
+
+
+
 
 </script>
 <style>

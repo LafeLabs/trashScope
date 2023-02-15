@@ -1,7 +1,15 @@
 {
     "server": "https://raw.githubusercontent.com/LafeLabs/trashmagicmedia/main/",
     "symbols": [
-        "controller.svg",
-        "symbol1669265051.svg"
+        "scan.svg",
+        "spellscan.svg",
+        "stepmovespell.svg",
+        "symbol1676137115.svg",
+        "symbol1676215833.svg",
+        "symbol1676216407.svg",
+        "symbol1676500387.svg",
+        "symbol1676500932.svg",
+        "symbol1676500959.svg",
+        "symbol1676501370.svg"
     ]
 }

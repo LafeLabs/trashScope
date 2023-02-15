@@ -1,4 +1,4 @@
-char coin[] = "G";
+char Glyph[] = "G";
 
 int delayus = 2000;//delayMicroseconds(delayus); for each step, 2 ms for 1 step is about 2 ms for 20 microns or 10 microns per ms
 
@@ -90,7 +90,7 @@ void loop() {
   
    //Serial.println(goBool); 
   if(goBool){
-      printCoin(coin); 
+      printGlyph(Glyph); 
   }
 
   if(xleftBool){
@@ -290,11 +290,11 @@ void geometronAction(char action){
 }
 
 
-void printCoin(char localcoin[]){
+void printGlyph(char localGlyph[]){
   side=unit;
-   for(int index = 0;index <= sizeof(coin);index++){
+   for(int index = 0;index <= sizeof(Glyph);index++){
     if(!stopBool){
-      geometronAction(localcoin[index]);    
+      geometronAction(localGlyph[index]);    
     }
    }  
 }

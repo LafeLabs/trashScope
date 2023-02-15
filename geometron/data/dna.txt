@@ -80,6 +80,7 @@
         "threejs.html",
         "threejsinvert.html",
         "traceicon.html",
+        "trajectory.html",
         "trashmagic.css",
         "trashmagic.html",
         "trashrobot.html",

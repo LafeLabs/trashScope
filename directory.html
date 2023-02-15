@@ -33,24 +33,24 @@ LANGUAGE IS HOW THE MIND PARSES REALITY
        <!--Stop Google:-->
     <META NAME="robots" CONTENT="noindex,nofollow">
    <title>TRASH MAGIC</title>    
-   <script src = "jscode/trashmagic.js"></script>
+   <script src = "trashmagic.js"></script>
    <link rel="stylesheet" href="trashmagic.css">
 </head>
 <body>    
 <div id = "mainscroll">
     
-    <h1 id = "title">GEOMETRON</h1>
+    <h1 id = "title">DIRECTORY</h1>
 
+<p>
+All the files in the Recursive Web.  
+</p>
 
-    <a href = "../">../</a>
-    <a href = "symbol.html">SYMBOL</a>
-    <a href = "trajectory.html">TRAJECTORY</a>
-    <a href = "editor.php">EDITOR.PHP</a> 
+<a href = "index.html">HOME</a>
 
 </div>
 <script>
 
-googleyeyes(8);
+//googleyeyes(8);
 
 titles = document.getElementsByTagName("H1");
 for(var index = 0;index < titles.length;index++){
@@ -61,7 +61,30 @@ for(var index = 0;index < titles.length;index++){
 rainbow(document.getElementsByTagName("A"));
 
 
+mainscroll = document.getElementById("mainscroll");
+files = [];
+var httpcimages = new XMLHttpRequest();
+httpcimages.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        files = JSON.parse(this.responseText);
+        var locallinks = [];
+        for(var index = 0;index < files.length;index++){
+            if(files[index].substring(files[index].length-5) == ".html"){
+                var newa = document.createElement("A");
+                newa.href = files[index];
+                newa.innerHTML = files[index];
+                mainscroll.appendChild(newa);
+                locallinks.push(newa);
+                
+            }
+        }
+        rainbow(locallinks);
+    }
+};
+httpcimages.open("GET", "rdir.php", true);
+httpcimages.send();
 </script>
+
 </body>
 </html>
 

@@ -106,7 +106,8 @@
         "serverurl.txt",
         "set.txt",
         "symbolset.txt",
-        "textfeed.txt"
+        "textfeed.txt",
+        "trajectory.txt"
     ],
     "javascript": [
         "geometron.js",

@@ -512,10 +512,21 @@ Use the JSON link below to see the trajectory of points which are linked by quas
 
 ### [Example of a tiktok video of one scan](https://www.tiktok.com/@trash_robot/video/7198655892819135786)
 
-## Research Task:
+## Software and Art Research Tasks:
 
-1. Develop a python framework to convert uploaded or downloaded videos from social media with some shaking and blurriness into a  combined high depth of field 2d bitmap image. 
+1. Develop a python framework to convert uploaded or downloaded videos from social media with some shaking and blurriness into a  combined high depth of field and large field of view 2d bitmap image. 
 2. develop a python framework to convert the above data along with position metadata from the JSON and some more fitting of points into a 3d color/intensity point cloud and import that into blender 
 3. use known 3d structures on circuit boards and imported 3d structures from real boards to calibrate the system in real units, tweak the algorithm
-4. 
+4. convert long sequences of scans into timelapse combined 2d video images 
+5. convert long sequences of scans into 4d point clouds in Blender
+6. create a social network linking Blender artists with scientists who send data to them and artists who they work with to produce media content in the form of videos, games, virtual reality and mixed reality which can be used to create viral media which replicate the whole system including the mircoscope
+7. link this social network with other sources of data for visualization to create a path from the scientific community to the viral online content creator community, using that virality to facilitate replication in science and technology
+
+## Systems to study
+
+ - mycelium growing across trash surfaces
+ - mycelium growing on circuit boards
+ - mycelium growing on totally random things we find around
+ - watch snow and ice and dirt melt over time
+
 
